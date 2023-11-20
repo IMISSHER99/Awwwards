@@ -24,10 +24,20 @@ const ScrollHelper: React.FC<ScrollHelperProps> = ({}) => {
                 }
             }
         }
+
+        const handleScrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }
+
         window.addEventListener('scroll', handleScroll)
+        window.addEventListener('click', handleScrollToTop)
 
         return () => {
             window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('click', handleScrollToTop)
         }
 
     }, [])
