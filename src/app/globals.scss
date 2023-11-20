@@ -12,7 +12,7 @@
 
 body {
     box-sizing: border-box;
-    
+    height: 200vh;
     font-size: 14px;
 }
 
@@ -208,5 +208,23 @@ body {
                 }
             }
         }
+    }
+}
+
+
+/******************************** BT NAV **************************/
+
+.bt-nav {
+    position: absolute;
+    bottom: 0px;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(var(--bg-secondary));  
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .3s;
+    
+    &--left {
+        left: 20%;
     }
 }

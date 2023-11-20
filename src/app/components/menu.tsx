@@ -1,18 +1,19 @@
 'use client'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import ScrollHelper from './ScrollHelper'
 
 interface MenuProps {
-
 }
 
 const Menu: React.FC<MenuProps> = ({ }) => {
 
-    const [toggleMenu, setToggleMenu] = useState<boolean>(false);
+    const [toggleMenu, setToggleMenu] = useState<boolean>(false)
 
     return (
         <div className="menu fixed bottom-7 w-full">
             <div className="flex items-center justify-center">
+                <ScrollHelper />
                 <div className={`menu-float__wrapper flex p-1.5 flex-col ${toggleMenu ? 'is-open': ''}`}>
                     <div className={`menu-float__top w-full ${toggleMenu ? 'block opacity-1 max-h-[500px] p-[30px] mb-1.5' : 'opacity-0 max-h-[0px] p-0 m-0'}`}>
                         <div className="flex w-full">
