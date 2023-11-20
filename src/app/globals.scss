@@ -12,8 +12,7 @@
 
 body {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    
     font-size: 14px;
 }
 
@@ -26,10 +25,23 @@ body {
             background-color: #2C2C2C;
             border-radius: 8px;
             color: white;
-            padding: 30px;
             overflow: hidden;
             width: 100%;
             transition: all .3s ease;
+        }
+
+        &__bottom {
+            transition: all .3s ease;
+            &::before {
+                content: "";
+                height: 60px;
+                transition: all .3s ease;
+            }
+
+            & .is-show &::before {
+                flex: 0;
+                width: 100%;
+            }
         }
 
         &__col {
@@ -80,9 +92,10 @@ body {
             border-radius: 12px;
             background-color: rgba(var(--bg-menu-wrapper), .8);
             transition: all .3s ease;
+            max-width: 616px;
 
             &.is-open {
-                min-width: 720px;
+                min-width: 732px !important;
                 max-width: 1200px;
                 transition: all .3s ease;
             }

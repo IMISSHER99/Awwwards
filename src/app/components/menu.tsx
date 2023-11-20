@@ -14,7 +14,7 @@ const Menu: React.FC<MenuProps> = ({ }) => {
         <div className="menu fixed bottom-7 w-full">
             <div className="flex items-center justify-center">
                 <div className={`menu-float__wrapper flex p-1.5 flex-col ${toggleMenu ? 'is-open': ''}`}>
-                    <div className={`menu-float__top w-full mb-1.5  ${toggleMenu ? 'block opacity-1' : 'hidden opacity-0'}`}>
+                    <div className={`menu-float__top w-full ${toggleMenu ? 'block opacity-1 max-h-[500px] p-[30px] mb-1.5' : 'opacity-0 max-h-[0px] p-0 m-0'}`}>
                         <div className="flex w-full">
                             <div className="menu-float__col">
                                 <div className='ml-4 mb-6 menu-float__menu-section'>Awards</div>
@@ -57,8 +57,8 @@ const Menu: React.FC<MenuProps> = ({ }) => {
                             </div>  
                         </div>
                     </div>
-                    <div className="menu-float__bottom flex justify-center">
-                        <div className={`menu-float__layout menu-float__layout--primary ${toggleMenu ? 'w-full' : ''}`}>
+                    <div className="menu-float__bottom flex justify-center relative">
+                        <div className={`menu-float__layout menu-float__layout--primary ${toggleMenu ? 'w-full absolute ' : ''}`}>
                             <div className="flex menu-float__content px-5 items-center gap-1.5">
                                 <Link href={"/"} className='font-bold flex items-center text-white'>w.</Link>
                                 <p className="flex items-center text-white"><strong>home</strong></p>
