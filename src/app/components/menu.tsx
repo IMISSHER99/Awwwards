@@ -17,7 +17,7 @@ const Menu: React.FC<MenuProps> = ({ }) => {
                     <div className={`menu-float__top w-full ${toggleMenu ? 'block opacity-1 max-h-[500px] p-[30px] mb-1.5' : 'opacity-0 max-h-[0px] p-0 m-0'}`}>
                         <div className="flex w-full">
                             <div className="menu-float__col">
-                                <div className='ml-4 mb-6 menu-float__menu-section'>Awards</div>
+                                <div className='ml-4 mb-6 menu-float__menu-section relative'>Awards</div>
                                 <ul className="menu-float__menu-nav">
                                     <li><Link href={"/"}>Winners</Link></li>
                                     <li><Link href={"/"}>Nominies</Link></li>
@@ -26,19 +26,19 @@ const Menu: React.FC<MenuProps> = ({ }) => {
                                 </ul>
                             </div>
                             <div className="menu-float__col">
-                                <div className='ml-4 mb-6 menu-float__menu-section'>Inspiration</div>
+                                <div className='ml-4 mb-6 menu-float__menu-section relative'>Inspiration</div>
                                 <ul className="menu-float__menu-nav">
                                     <li><Link href={"/"}>Collection</Link></li>
                                     <li><Link href={"/"}>Elements</Link></li>
                                 </ul>
-                                <div className='ml-4 mb-6 menu-float__menu-section mt-6'>Academy</div>
+                                <div className='ml-4 mb-6 menu-float__menu-section mt-6 relative'>Academy</div>
                                 <ul className="menu-float__menu-nav">
                                     <li><Link href={"/"}>Courses</Link></li>
                                     <li><Link href={"/"}>Masterclasses</Link></li>
                                 </ul>
                             </div>  
                             <div className="menu-float__col">
-                                <div className='ml-4 mb-6 menu-float__menu-section'>Directory</div>
+                                <div className='ml-4 mb-6 menu-float__menu-section relative'>Directory</div>
                                 <ul className="menu-float__menu-nav">
                                     <li><Link href={"/"}>Professional</Link></li>
                                     <li><Link href={"/"}>Internationals</Link></li>
@@ -47,7 +47,7 @@ const Menu: React.FC<MenuProps> = ({ }) => {
                                 </ul>
                             </div>
                             <div className="menu-float__col">
-                                <div className='ml-4 mb-6 menu-float__menu-section'>W.</div>
+                                <div className='ml-4 mb-6 menu-float__menu-section relative'>W.</div>
                                 <ul className="menu-float__menu-nav">
                                     <li><Link href={"/"}>Blog</Link></li>
                                     <li><Link href={"/"}>Jobs</Link></li>

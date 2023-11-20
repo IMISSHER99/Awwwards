@@ -25,9 +25,17 @@ body {
             background-color: #2C2C2C;
             border-radius: 8px;
             color: white;
-            overflow: hidden;
+            overflow-x: hidden;
             width: 100%;
             transition: all .3s ease;
+            
+
+            & > div {
+                @media only screen and (max-width: 638px) {
+                    flex-direction: column;
+                    min-width: 80vw;
+                }
+            }
         }
 
         &__bottom {
@@ -78,8 +86,8 @@ body {
                 &::before {
                     content: "";
                     position: absolute;
-                    top: 6px;
-                    left: -1.5px;
+                    top: 8px;
+                    left: -16.5px;
                     width: 4px;
                     height: 4px;
                     border-radius: 50%;
@@ -94,10 +102,18 @@ body {
             transition: all .3s ease;
             max-width: 616px;
 
+
             &.is-open {
-                min-width: 732px !important;
+                min-width: fit-content;
                 max-width: 1200px;
                 transition: all .3s ease;
+
+             
+            }
+
+
+            @media only screen and (max-width: 638px) {
+                max-width: 135px;
             }
         }
 
@@ -113,6 +129,10 @@ body {
                 overflow: hidden;
                 background-color: #3e3e3e;
                 transition: all .3s ease;
+
+                @media only screen and (max-width: 638px) {
+                    display: none;
+                }
             }
         }
 
