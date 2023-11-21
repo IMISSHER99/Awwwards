@@ -8,11 +8,17 @@
     --bg-secondary: 33, 33, 33;
     --color-learn-2: 255, 249, 209;
     --gold: 255, 241, 133;
+    --inner-width: 1920px;
+    --pad-inner: 52px;
+    --sf-bg: 232, 232, 232;
+
+    @media only screen and (max-width: 600px) {
+        --pad-inner: 16px;
+    }
 }
 
 body {
     box-sizing: border-box;
-    height: 200vh;
     font-size: 14px;
 }
 
@@ -226,5 +232,210 @@ body {
     
     &--left {
         left: 20%;
+    }
+}
+
+
+/********************************** HEADER *****************************/
+
+.header {
+    .inner {
+        max-width: var(--inner-width);
+        padding: 0 var(--pad-inner);
+        margin: 0 auto;
+    }
+
+    &-main {
+        &__right {
+            gap: 12px;
+            height: 48px;
+            margin-left: 20px;
+        }
+
+        &__user {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            & a {
+                @media only screen and (max-width: 600px) {
+                    display: none;
+                    visibility: hidden;
+                }
+            }
+        }
+
+        &__ico {
+            display: none;
+            visibility: hidden;
+
+            @media only screen and (max-width: 600px) {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                visibility: visible;
+            }
+        }
+
+        &__bts{
+            display: flex;
+            gap: 12px;
+            margin-left: 8px;
+
+            @media only screen and (max-width: 1060px) {
+                display: none;
+                visibility: hidden;
+            }
+        }
+    }
+
+
+}
+
+
+/********************************* SEARCH FORM ****************************/
+
+.search {
+    &-form {
+        height: 48px;
+        padding-right: 20px;
+        background-color: rgb(var(--sf-bg));
+        border-radius: 8px;
+    
+        &__field {
+            padding-left: 20px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+    
+        &__button {
+            padding: 0;
+            border: none;
+            cursor: pointer;
+    
+            svg {
+                fill: #a7a7a7;
+            }
+        }
+    
+        &__input {
+            padding-left: 10px;
+            border: none;
+            background-color: rgba(0,0,0,0);
+    
+            &::placeholder {
+                color: #a7a7a7;
+            }
+        }
+    
+        &__separator {
+            margin: 0 20px;
+            font-size: 11px;
+            @media only screen and (max-width: 1060px) {
+                display: none;
+                visibility: hidden;
+            }
+        }
+    }
+    
+
+/********************************* Search Dropdown ***************************/
+    &-dropdown {
+        width: 150px;
+        cursor: pointer;
+        border-radius: 26px;
+        @media only screen and (max-width: 1060px) {
+            display: none;
+            visibility: hidden;
+        }
+
+        &__arrow {
+            top: 50%;
+            right: 0px;
+            transform: translateY(-50%);
+            z-index: 2;
+            transform: all .3s ease;
+
+            &.is-active {
+                top: calc(50% - 5px);
+                fill: white;    
+                transform: scaleY(-1);
+                transform: all .3s ease;
+            }
+        }
+
+        &__selected {
+            padding-right: 30px;
+            font-weight: 500;
+            z-index: 2;
+            &.is-active {
+                padding-left: 16px;
+                color: white;
+            }
+        }
+
+        &__options {
+            position: absolute;
+            top: calc(100% - 34px);
+            width: calc(100% + 28px);
+            padding: 40px 0 10px 0;
+            background-color: rgb(var(--bg-secondary));
+            border-radius: 8px;
+            color: white;
+            transform: translateX(-8px);
+            overflow: hidden;
+            transition: all .3s ease;
+            
+        }
+
+        &__option {
+            display: block;
+            padding: 8px 24px;
+            color: white;
+            transition: all .3s ease;
+
+            &:hover {
+                opacity: .7;
+            }
+
+            &.is-child {
+                padding-left: 36px;
+            }
+        }
+    }
+
+}
+
+/******************************* button ********************************/
+.button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    padding: 0 24px;
+    background-color: #222;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    transition: all .3s ease;
+
+    &:hover {
+        color: white;
+        background-color: #383838;
+    }
+
+    &[class*="--rounded"]{
+        border-radius: 8px;
+    }
+
+    &--outline--rounded {
+       background: rgba(0,0,0,0);
+        border: 1px solid #222;
+        color: #222;
     }
 }
