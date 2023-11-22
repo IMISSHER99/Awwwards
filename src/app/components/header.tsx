@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import SearchForm from './SearchForm';
+import SearchResults from './SearchResults'
 
 interface HeaderProps {
     
@@ -17,7 +18,9 @@ const Header: React.FC<HeaderProps> = ({}) => (
                     </Link>
                 </div>
                 <div className="header-search relative flex-1 ml-3">
+                    <div className="header-search__overlay"></div>
                     <SearchForm />
+                    <SearchResults />
                 </div>
                 <div className="header-main__right flex">
                     <div className="header-main__user flex">
