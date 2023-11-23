@@ -2,13 +2,13 @@ import Link from 'next/link'
 import Slider from './Slider'
 
 interface SearchResultsProps {
-
+    visible: boolean
 }
 
-const SearchResults: React.FC<SearchResultsProps> = ({}) => {
+const SearchResults: React.FC<SearchResultsProps> = ({visible}) => {
     return (
-        <div className="header-search__results">
-            <div className="contents-tab">
+        <div className={`header-search__results transition-all duration-3000 ease-in ${visible ? 'visible opacity-1' : 'invisible opacity-0'}`}>
+            <div className={`contents-tab transition-all duration-3000 ease-in ${visible ? 'visible opacity-1' : 'invisible opacity-0'}`}>
                 <div className="contents-tab__items relative block">
                     <div className="header-search__content-results flex">
                         <div className="header-search__left">

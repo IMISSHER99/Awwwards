@@ -17,11 +17,7 @@ const Header: React.FC<HeaderProps> = ({}) => (
                         </svg>
                     </Link>
                 </div>
-                <div className="header-search relative flex-1 ml-3">
-                    <div className="header-search__overlay"></div>
-                    <SearchForm />
-                    <SearchResults />
-                </div>
+                <SearchForm />
                 <div className="header-main__right flex">
                     <div className="header-main__user flex">
                         <Link href={"/"} className='cursor-pointer'>Log in</Link>
