@@ -11,7 +11,6 @@ const ScrollHelper: React.FC<ScrollHelperProps> = ({}) => {
     useEffect(() => {
         const handleScroll= () => {
             const scrollPosition = window.scrollY
-            console.log(scrollPosition)
             const element = document.getElementById("bt-nav")
             if(element) {
                 if(scrollPosition > 100) {

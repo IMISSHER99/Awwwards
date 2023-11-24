@@ -7,7 +7,7 @@ interface SearchResultsProps {
 
 const SearchResults: React.FC<SearchResultsProps> = ({visible}) => {
     return (
-        <div className={`header-search__results transition-all duration-3000 ease-in ${visible ? 'visible opacity-1' : 'invisible opacity-0'}`}>
+        <div className={`header-search__results transition-all duration-3000 ease-in z-10 ${visible ? 'visible opacity-1' : 'invisible opacity-0'}`}>
             <div className={`contents-tab transition-all duration-3000 ease-in ${visible ? 'visible opacity-1' : 'invisible opacity-0'}`}>
                 <div className="contents-tab__items relative block">
                     <div className="header-search__content-results flex">

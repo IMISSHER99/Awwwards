@@ -3,6 +3,7 @@ import { Lato } from 'next/font/google'
 import './globals.scss'
 import Menu from './components/menu'
 import Header from './components/header'
+import Marquee from './components/marquee'
 
 const inter = Lato({
   weight: ['100','300', '400', '700', '900'],
@@ -22,6 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <div className="marquee dark w-full overflow-hidden flex items-center">
+          <Marquee boldMessage='BLACK DAYS! - UP TO 80% OFF' count={11} message='' displayIcon={true} />
+        </div>
         <Header />
         {children}
         <Menu />

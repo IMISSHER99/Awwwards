@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import SearchForm from './SearchForm';
-import SearchResults from './SearchResults'
 
 interface HeaderProps {
     
