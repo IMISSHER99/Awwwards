@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from "react";
-import SearchDropdown from "./SearchDropdown";
-import SearchResults from "./SearchResults";
+import SearchDropdown from "../searchDropdown/SearchDropdown";
+import SearchResults from "../searchResults/SearchResults";
 
 interface SearchFormProps {
 
@@ -27,9 +27,9 @@ const SearchForm :React.FC<SearchFormProps> = ({}) => {
     }, []);
     
     return (
-        <div className="header-search relative flex-1 ml-3">
+        <div className="header-search relative  flex-1 ml-3">
             <div className={`header-search__overlay transition-all duration-3000 ease-in ${isInputFocused ? 'visible opacity-1' : 'invivible opacity-0'}`}></div>
-            <div className={`search-form relative flex items-center text-sm transition-all duration-3000 ease-in  ${isInputFocused ? 'dark' : ''}`}>
+            <div className={`search-form relative z-20 flex items-center text-sm transition-all duration-3000 ease-in  ${isInputFocused ? 'dark' : ''}`}>
                 <div className="search-form__field flex flex-1 h-full">
                     <button className="search-form__button flex items-center" type="submit" aria-label="Search">
                         <svg className="ico-svg" viewBox="0 0 20 20" width="20">

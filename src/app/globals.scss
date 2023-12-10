@@ -4,6 +4,7 @@
 
 
 :root {
+    --bg-3rd: 232, 232, 232;
     --bg-menu-wrapper: 34,34,34;
     --bg-secondary: 33, 33, 33;
     --color-learn-2: 255, 249, 209;
@@ -13,6 +14,7 @@
     --sf-bg: 209, 209, 209;
     --color-primary: 122, 122, 122;
     --ch-bg: 232, 232, 232;
+    --min-height-login: 693px;
 
     @media only screen and (max-width: 600px) {
         --pad-inner: 16px;
@@ -341,7 +343,6 @@ body {
         padding-right: 20px;
         background-color: rgb(var(--sf-bg));
         border-radius: 8px;
-        z-index: 1;
         &.dark {
             background-color: #383838;
             color: #a7a7a7;
@@ -478,8 +479,12 @@ body {
     transition: all .3s ease;
 
     &:hover {
-        color: white;
-        background-color: #383838;
+        color: white !important;
+        background-color: #383838 !important;
+        
+        & svg {
+            fill: currentColor;
+        }
     }
 
     &[class*="--rounded"]{
@@ -488,8 +493,8 @@ body {
 
     &--outline--rounded {
        background: rgba(0,0,0,0);
-        border: 1px solid #222;
-        color: #222;
+        border: 1px solid #222 !important;
+        color: #222 !important;
     }
 
     &[class*="--x-small"] {
@@ -534,6 +539,14 @@ body {
         font-size: 20px;
         font-weight: 400;
         line-height: var(--button-height);
+    }
+
+    &[class*="--full"] {
+        width: 100%;
+    }
+
+    &[class*="--outline--gray"] {
+        border-color: #d3d3d3;
     }
 
     
@@ -725,4 +738,226 @@ body {
             line-height: 110px;
         }
     }
+}
+
+/************************************** TAGS INFO ****************************************/
+
+.tags-info {
+    position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: clamp(30px,4vw,60px) 0;
+
+    &__left {
+        font-size: clamp(28px,18.1408450704px + 1.9718309859vw,56px);
+        font-weight: 700;
+    }
+
+    &__right {
+        p {
+            font-size: 16px;
+            width: 740px;
+            max-width: 100%;
+        }
+    }
+}
+
+
+/********************************************* MODAL ***************************************/
+
+.modal {
+    padding: clamp(24px, 3vw, 48px) 0;
+    background-color: rgba(0,0,0,.7);
+    overscroll-behavior: contain;
+    transition: all .3s ease;
+
+    & .bt-nav {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        z-index: 30;
+    }
+
+    &--large &__container {
+        width: 1142px;
+    }
+
+    &__container {
+        position: relative;
+        display: inline-block;
+        max-width: 100%;
+        margin: auto 0;
+
+    }
+}
+
+
+/************************************************* LOGIN ******************************************/
+
+.login {
+    position: relative;
+    width: 100%;
+    height: var(--min-height-login);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white ;
+
+    &__container {
+        min-height: var(--min-height-login);
+    }
+
+    &__left {
+        background-color: rgb(var(--bg-3rd));
+    }
+
+    &__inner {
+        padding: 50px;
+        height: 100%;
+        
+        h3 {
+            margin-bottom: 36px;
+        }
+    }
+
+    &__logo {
+        gap: 2vw;
+        font-size: 162px;
+
+        & > svg:nth-child(1) {
+            width: auto;
+            height: 65px !important;
+        }
+    }
+
+    &__forgot {
+        margin-top: -1em;
+        text-align: right;
+    }
+
+    &__bottom {
+        a {
+            color: #222;
+        }
+    }
+
+
+
+}
+
+
+/****************************************** LOADER *************************************/
+
+.loading {
+    transform: scale(0.5);
+    background-color: white;
+}
+
+/*************************************** LINK ******************************/
+
+.link-underlined {
+    position: relative;
+    display: inline-block;
+    line-height: 100%;
+    color: rgb(var(--bg-menu-wrapper));
+    border: none;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -0.2em;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(to right, rgb(var(--bg-menu-wrapper)) 45%, rgba(var(--bg-menu-wrapper), 0.3) 55%);
+        background-size: 220% 100%;
+        background-position: 100% 50%;
+        transition: .3s ease-out;
+    }
+
+    &:hover::before {
+        background-position: 0 50%;
+    }
+}
+
+/*********************************************** FORM *************************************************/
+
+.form {
+    --height-input: 48px;
+    --pad-input: 16px;
+    &__row {
+        margin-bottom: 30px;
+    }
+
+    &-field {
+        position: relative;
+        width: 100%;
+        
+        &__label {
+            display: block;
+            margin-bottom: 8px;
+            line-height: 100%;
+            text-transform: uppercase;
+            color: rgb(166, 166, 166);
+        }
+
+        .text-input {
+            display: block;
+            height: var(--height-input);
+            padding: 0 var(--pad-input);
+            background-color: transparent;
+            color: #222;
+            outline: none;
+            border-bottom: 1px solid rgb(var(--bg-3rd));
+            width: 100%;
+            &::placeholder {
+                color: rgb(211, 211, 211);
+                font-weight: 300;
+            }
+        }
+
+        .input-check {
+            --color-primary: #222;
+            
+
+            label {
+                display: inline-block;
+                position: relative;
+                padding-left: 25px;
+                margin-right: 30px;
+                line-height: 130%;
+                cursor: pointer;
+            
+                &::after {
+                    content: "";
+                    position: absolute; 
+                    top: 4px;
+                    left: 5px;
+                    width: 9px;
+                    height: 9px;
+                    background: var(--color-primary);
+                    border-radius: 2px;
+                    transition: all .3s;
+                }
+    
+    
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 9px;
+                    left: 0;
+                    width: 19px;
+                    height: 19px;
+                    margin-top: -10px;
+                    border: 2px solid #d3d3d3;
+                    border-radius: 4px;
+                }
+
+                
+            }
+        }
+    }
+
 }

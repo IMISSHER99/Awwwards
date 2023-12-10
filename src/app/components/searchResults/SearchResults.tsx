@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Slider from './Slider'
+import Slider from '../slider/Slider'
 
 interface SearchResultsProps {
     visible: boolean

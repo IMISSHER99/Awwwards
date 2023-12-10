@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Lato } from 'next/font/google'
 import './globals.scss'
-import Menu from './components/menu'
-import Header from './components/header'
-import Marquee from './components/marquee'
+import Menu from './components/menu/menu'
+import Header from './components/header/header'
+import Marquee from './components/marquee/marquee'
 
 const inter = Lato({
   weight: ['100','300', '400', '700', '900'],

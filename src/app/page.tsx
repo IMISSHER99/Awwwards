@@ -1,5 +1,6 @@
-import Card from "./components/card"
-import Marquee from "./components/marquee"
+import Card from "./components/card/card"
+import Marquee from "./components/marquee/marquee"
+import { CardData } from "./data/card.data"
 
 
 interface HomeProps {
@@ -17,8 +18,9 @@ const Home: React.FC<HomeProps> = ({}) => (
             <div className="marquee w-full overflow-hidden flex items-center font-40">
                 <Marquee boldMessage='Adidas Arena|7.57' count={11} message=' — Site of the Day - | — Nov 23, 2023 —' displayIcon={false} />
             </div>
-            <Card />
+            <Card card={CardData} />
         </div>
+        
     </main>
 )
 
