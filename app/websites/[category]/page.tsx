@@ -1,4 +1,4 @@
-import Filter from "../_components/filters/Filters"
+import Filter from "../../_components/filters/Filters"
 
 export type WebsiteProps = {}
 

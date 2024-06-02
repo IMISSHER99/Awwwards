@@ -39,3 +39,33 @@ export const subLinkRelations = relations(subLinks, ({ one }) => ({
         references: [links.id]
     })
 }))
+
+
+export const awards = schema.table("awards", {
+    id: serial("id").primaryKey(),
+    name: varchar("name").unique().notNull(),
+    routeTo: varchar("route_to").unique().notNull(),
+    description: text("description"),
+    createdAt: timestamp("created_at", { precision: 6, withTimezone: true}).defaultNow(),
+    updatedAt: timestamp("updated_at", { precision: 6, withTimezone: true}).defaultNow(),
+})
+
+export const category = schema.table("category", {
+    id: serial("id").primaryKey(),
+    name: varchar("name").unique().notNull(),
+    description: text("description"),
+    routeTo: varchar("route_to").notNull().unique(),
+    createdAt: timestamp("created_at", { precision: 6, withTimezone: true}).defaultNow(),
+    updatedAt: timestamp("updated_at", { precision: 6, withTimezone: true}).defaultNow(),
+})
+
+
+export const tags = schema.table("tags", {
+    id: serial("id").primaryKey(),
+    name: varchar("name").unique().notNull(),
+    description: text("description"),
+    routeTo: varchar("route_to").notNull().unique(),
+    createdAt: timestamp("created_at", { precision: 6, withTimezone: true}).defaultNow(),
+    updatedAt: timestamp("updated_at", { precision: 6, withTimezone: true}).defaultNow(),
+})
+
