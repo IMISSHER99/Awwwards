@@ -1,4 +1,5 @@
 import Image from "next/image";
+import WithContainer from "./_components/WithContainer";
 
 interface HomeProps {
 
@@ -6,8 +7,10 @@ interface HomeProps {
 
 const Home:React.FC<HomeProps> = ({}) => {
   return (
-    <main>
-      Hello World!
+    <main className="bg-color h-full">
+      <WithContainer>
+        hello world!
+      </WithContainer>
     </main>
   )
 }
