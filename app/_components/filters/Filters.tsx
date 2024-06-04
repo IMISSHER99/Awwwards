@@ -34,17 +34,15 @@ const Filter:React.FC<FilterProps> = ({}) => {
 
 
     return (
-        <div className="w-full mt-[76px] h-[54px]">
-            <WithContainer>
-                <div className="flex items-center justify-between bg-grey min-h-[54px] rounded-lg p-1.5">
-                    <div className="flex items-center gap-1.5">
-                        <Dropdown filterData={filters.awards} name="Awards" isOpen={openDropdown === 'Awards'} onToggle={() => toggleDropdown('Awards')}/>
-                        <Dropdown filterData={filters.category} name="Category" isOpen={openDropdown === 'Category'}  onToggle={() => toggleDropdown('Category')} />
-                    </div>
-                    <div className="flex items-center gap-3">
-                    </div>
+        <div className="w-full mt-[86px] h-[54px]">
+            <div className="flex items-center justify-between bg-grey min-h-[54px] rounded-lg p-1.5">
+                <div className="flex items-center gap-1.5">
+                    <Dropdown filterData={filters.awards} name="Awards" isOpen={openDropdown === 'Awards'} onToggle={() => toggleDropdown('Awards')}/>
+                    <Dropdown filterData={filters.category} name="Category" isOpen={openDropdown === 'Category'}  onToggle={() => toggleDropdown('Category')} />
                 </div>
-            </WithContainer>
+                <div className="flex items-center gap-3">
+                </div>
+            </div>
         </div>
     )
 }
