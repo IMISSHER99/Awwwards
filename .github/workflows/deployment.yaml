@@ -1,0 +1,27 @@
+name: CI-CD
+on:
+  push:
+    branches: [main, golden, develop]
+  pull_request:
+    types: [opened]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Cache
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm Install
+
+      - name: Build Application
+        run: npm run build
+
+      
