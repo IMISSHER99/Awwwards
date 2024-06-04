@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Navigation from "../navigation/Navigation"
+import SearchBar from "../searchbar/SearchBar"
 
 export type HeaderProps = {
 
@@ -8,7 +9,7 @@ export type HeaderProps = {
 const Header:React.FC<HeaderProps> = ({}) => {
     return (
         <header className="fixed w-full h-full mt-[50px]">
-            <div className="inner h-14 rounded-lg active flex items-center ps-1.5 pe-1.5">
+            <div className="inner h-[54px] rounded-lg flex items-center ps-1.5 pe-1.5">
                 {/* Logo */}
                 <div className="flex items-center justify-between">
                     <Link href={"/"}>
@@ -20,6 +21,7 @@ const Header:React.FC<HeaderProps> = ({}) => {
                 {/* Navigation */}
                 <Navigation />
                 {/* Search Bar */}
+                <SearchBar />
                 {/* Login / Signup */}
                 {/* Additional Buttons */}
             </div>
