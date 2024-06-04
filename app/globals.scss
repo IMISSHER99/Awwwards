@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --primary-background: 248, 248, 248;
+    --header-active: 237, 237, 237;
+    --pad-inner: 52px;
+    --inline-width: 1816px;
+    --background: 226, 231, 211;
+}
+
+*, *::before, *::after {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(var(--primary-background));
+}
+
+.inner {
+    inline-size: min((100% - var(--pad-inner) * 2), var(--inline-width));
+    margin-inline: auto;
+}
+
+.bg-color {
+    background-color: rgb(var(--background));
+}
+
+
+/************************************ HEADER ********************************/
+
+header {
+    & .active {
+        background-color: rgb(var(--header-active));
+    }
+}
