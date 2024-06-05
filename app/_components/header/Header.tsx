@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Navigation from "../navigation/Navigation"
 import SearchBar from "../searchbar/SearchBar"
+import Button, { ButtonType } from "@/app/_common/button/Button"
 
 export type HeaderProps = {
 
@@ -23,7 +24,15 @@ const Header:React.FC<HeaderProps> = ({}) => {
                 {/* Search Bar */}
                 <SearchBar />
                 {/* Login / Signup */}
+                <div className="flex items-center justify-between h-full gap-4 ml-5">
+                    <Link href={"/"} className="flex items-center justify-between font-bold text-base">Log in</Link>
+                    <Link href={"/"} className="flex items-center justify-between font-bold text-base">Sign Up</Link>
+                </div>
                 {/* Additional Buttons */}
+                <div className="flex items-center justify-between gap-4 ml-5">
+                    <Button text="Be Pro" type={ButtonType.DEFAULT} />
+                    <Button text="Submit Website" type={ButtonType.BUTTON_OUTLINE} />    
+                </div>
             </div>
         </header>
     )
