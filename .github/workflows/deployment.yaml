@@ -38,12 +38,24 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
+      
+      # Gather metdata from github
       - name: Docker metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: awwwards
+
+      # Push image to dockerhub
+      - name: Docker build and Push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+      
+
 
 
 
