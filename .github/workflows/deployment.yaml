@@ -38,7 +38,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: awwwards
+          images: mrrobot1999/awwwards
 
       # Login to Docker hub
       - name: Login to Docker hub
