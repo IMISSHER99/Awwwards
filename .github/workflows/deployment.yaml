@@ -9,12 +9,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Github Code Checkout Action
       - name: Git Checkout
         uses: actions/checkout@v4
       
+      # Install Dependencies for the application
       - name: Install Dependencies
         run: npm install
 
+      # Setting Up Cache for storing the dependencies
       - name: Setup caching
         uses: actions/cache@v4
         with:
@@ -25,8 +28,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
-
+      # Building the application
       - name: Build Application
         run: npm run build
+
+      # Login to Docker hub
+      - name: Login to Docker hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
 
       
