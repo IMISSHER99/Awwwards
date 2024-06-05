@@ -9,6 +9,8 @@
     --pad-inner: 52px;
     --inline-width: 1816px;
     --background: 226, 231, 211;
+    --black: 34,34,34;
+    --black-v1: 56, 56, 56;
 }
 
 *, *::before, *::after {
@@ -28,15 +30,65 @@ body {
     margin-inline: auto;
 }
 
+/************************************ COLOR **********************************/
+
+
 .bg-color {
     background-color: rgb(var(--background));
 }
 
+.bg-black {
+    background-color: rgb(var(--black));
+    &--v1 {
+        background-color: rgb(var(--black-v1));
+    }
+}
+
+
+/*********************************** TRANISTION ******************************/
+
+.transition {
+    transition: all .3s ease-in;
+}
 
 /************************************ HEADER ********************************/
 
 header {
     & .active {
         background-color: rgb(var(--header-active));
+    }
+}
+
+/******************************** SEARCH BAR *********************************/
+
+.searchbar {
+    font-size: 15px;
+    color: rgb(var(--black));
+    &::placeholder {
+        color: black;
+        font-weight: 100 !important;
+        font-size: 15px !important;
+        color: rgb(var(--black));
+    }
+}
+
+/********************************** BUTTON *************************************/
+
+.button {
+    transition: all .3s ease-in;
+
+    &:hover {
+        background-color: rgb(var(--black-v1));
+    }
+
+    &__outline {
+        color: rgb(var(--black));
+        background: transparent;
+        border: .5px solid rgb(var(--black));
+
+        &:hover {
+            background-color: rgb(var(--black-v1));
+            color: white;
+        }
     }
 }
