@@ -8,7 +8,7 @@
     --header-active: 237, 237, 237;
     --pad-inner: 52px;
     --inline-width: 1816px;
-    --background: 226, 231, 211;
+    --background: 160, 169, 171;
     --black: 34,34,34;
     --black-v1: 56, 56, 56;
 }
@@ -28,6 +28,11 @@ body {
 .inner {
     inline-size: min((100% - var(--pad-inner) * 2), var(--inline-width));
     margin-inline: auto;
+
+    @media only screen and (max-width: 786px) {
+        margin-inline: 0;
+        inline-size: auto;
+    }
 }
 
 /************************************ COLOR **********************************/
