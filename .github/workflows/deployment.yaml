@@ -32,6 +32,9 @@ jobs:
       - name: Build Application
         run: npm run build
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       
       # Gather metdata from github
       - name: Docker metadata
