@@ -37,7 +37,7 @@ export type NavigationProps = {
 const Navigation:React.FC<NavigationProps> = ({ display, handleToggle }) => {
     return (
         // Navigation Wrapper
-        <nav className={`flex items-center justify-between ms-[60px] gap-5 transition ${display ? 'hidden' : ''}`}>
+        <nav className={`hidden xl:flex items-center justify-between ms-[60px] gap-5 transition ${display ? 'hidden' : ''}`}>
             {
                 defaultNavigationLinks.map(({routeTo, name, dropdown}, index) => {
                     return (
