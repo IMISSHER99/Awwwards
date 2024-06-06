@@ -69,6 +69,7 @@ const Header:React.FC<HeaderProps> = ({}) => {
                 {/* Navigation Dropdown */}
                 <NavigationDropdown display={active}/>
             </div>
+            
         </header>
     )
 }
