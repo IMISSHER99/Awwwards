@@ -9,12 +9,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Github Code Checkout Action
       - name: Git Checkout
         uses: actions/checkout@v4
       
+      # Install Dependencies for the application
       - name: Install Dependencies
         run: npm install
 
+      # Setting Up Cache for storing the dependencies
       - name: Setup caching
         uses: actions/cache@v4
         with:
@@ -25,8 +28,37 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
-
+      # Building the application
       - name: Build Application
         run: npm run build
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      
+      # Gather metdata from github
+      - name: Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: mrrobot1999/awwwards
+
+      # Login to Docker hub
+      - name: Login to Docker hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      
+
+      # Push image to dockerhub
+      - name: Docker build and Push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=registry,ref=mrrobot1999/awwwards:buildcache
+          cache-to: type=registry,ref=mrrobot1999/awwwards:buildcache,mode=max
       

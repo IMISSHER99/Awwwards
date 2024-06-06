@@ -8,7 +8,9 @@
     --header-active: 237, 237, 237;
     --pad-inner: 52px;
     --inline-width: 1816px;
-    --background: 226, 231, 211;
+    --background: 160, 169, 171;
+    --black: 34,34,34;
+    --black-v1: 56, 56, 56;
 }
 
 *, *::before, *::after {
@@ -26,17 +28,76 @@ body {
 .inner {
     inline-size: min((100% - var(--pad-inner) * 2), var(--inline-width));
     margin-inline: auto;
+
+    @media only screen and (max-width: 786px) {
+        margin-inline: 0;
+        inline-size: auto;
+    }
 }
+
+/************************************ COLOR **********************************/
+
 
 .bg-color {
     background-color: rgb(var(--background));
 }
 
+.bg-black {
+    background-color: rgb(var(--black));
+    &--v1 {
+        background-color: rgb(var(--black-v1));
+    }
+}
+
+.bg-grey {
+    background-color: rgb(var(--header-active));
+}
+
+
+/*********************************** TRANISTION ******************************/
+
+.transition {
+    transition: all .3s ease-in;
+}
 
 /************************************ HEADER ********************************/
 
 header {
     & .active {
         background-color: rgb(var(--header-active));
+    }
+}
+
+/******************************** SEARCH BAR *********************************/
+
+.searchbar {
+    font-size: 15px;
+    color: rgb(var(--black));
+    &::placeholder {
+        color: black;
+        font-weight: 100 !important;
+        font-size: 15px !important;
+        color: rgb(var(--black));
+    }
+}
+
+/********************************** BUTTON *************************************/
+
+.button {
+    transition: all .3s ease-in;
+
+    &:hover {
+        background-color: rgb(var(--black-v1));
+    }
+
+    &__outline {
+        color: rgb(var(--black));
+        background: transparent;
+        border: .5px solid rgb(var(--black));
+
+        &:hover {
+            background-color: rgb(var(--black-v1));
+            color: white;
+        }
     }
 }
