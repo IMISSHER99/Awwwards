@@ -4,6 +4,7 @@ import Navigation from "../navigation/Navigation"
 import SearchBar from "../searchbar/SearchBar"
 import Button, { ButtonType } from "@/app/_common/button/Button"
 import { useState } from "react"
+import NavigationDropdown from "../navigationDropdown/NavigationDropdown"
 
 export type HeaderProps = {
 
@@ -21,8 +22,9 @@ const Header:React.FC<HeaderProps> = ({}) => {
     
     return (
         <header className="fixed w-full h-full mt-2">
-            <div className={`inner h-[54px] rounded-lg flex items-center ps-1.5 pe-1.5 transition ${active ? 'active' : ''}`}>
-                {/* Hamburger menu */}
+            <div className={`inner rounded-lg h-fit flex flex-col items-center transition ${active ? 'active' : ''}`}>
+                <div className="flex h-[54px] w-full items-center ps-1.5 pe-1.5 ">
+                    {/* Hamburger menu */}
                 <svg width={16} viewBox="0 0 20 20" className="block xl:hidden mr-3">
                     <path d="M19.5,17.6H0.5c-0.3,0-0.5-0.2-0.5-0.5c0-0.3,0.2-0.5,0.5-0.5h18.9c0.3,0,0.5,0.2,0.5,0.5C20,17.4,19.8,17.6,19.5,17.6z M19.5,10.5H0.5C0.2,10.5,0,10.3,0,10s0.2-0.5,0.5-0.5h18.9c0.3,0,0.5,0.2,0.5,0.5S19.8,10.5,19.5,10.5z M19.5,3.4H0.5C0.2,3.4,0,3.2,0,2.9s0.2-0.5,0.5-0.5h18.9c0.3,0,0.5,0.2,0.5,0.5S19.8,3.4,19.5,3.4z"></path>
                 </svg>
@@ -52,8 +54,10 @@ const Header:React.FC<HeaderProps> = ({}) => {
                     <Button text="Be Pro" type={ButtonType.DEFAULT} />
                     <Button text="Submit Website" type={ButtonType.BUTTON_OUTLINE} />    
                 </div>
+                </div>
+                {/* Navigation Dropdown */}
+                <NavigationDropdown display={active}/>
             </div>
-            
         </header>
     )
 }

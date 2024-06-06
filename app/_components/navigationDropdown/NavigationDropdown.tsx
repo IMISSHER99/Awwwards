@@ -1,8 +1,12 @@
-export type NavigationDropdownProps = {}
+export type NavigationDropdownProps = {
+    display: boolean
+}
 
-const NavigationDropdown:React.FC<NavigationDropdownProps> = ({}) => {
+const NavigationDropdown:React.FC<NavigationDropdownProps> = ({ display }) => {
     return (
-        <div></div>
+        <div className={`w-full min-h-[450px] bg-grey rounded-lg transition opacity-0 ${display ? 'flex opacity-1': ''}`}>
+
+        </div>
     )
 }
 
