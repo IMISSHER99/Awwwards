@@ -109,8 +109,8 @@ const NavigationDropdown:React.FC<NavigationDropdownProps> = ({ display }) => {
                         {
                             activeHeader?.subLinks?.map((item, index) => {
                                 return (
-                                    <li>
-                                        <span key={index} className="flex items-center justify-between gap-3 bg-transparent transparent hover:bg-white h-[40px] min-w-[180px] px-4 rounded-lg">
+                                    <li key={index}>
+                                        <span className="flex items-center justify-between gap-3 bg-transparent transparent hover:bg-white h-[40px] min-w-[180px] px-4 rounded-lg">
                                             <p className="flex items-center font-light">{item.name}</p>
                                             <p className="flex items-center font-light">{item.count}</p>
                                         </span>
