@@ -22,7 +22,7 @@ const Header:React.FC<HeaderProps> = ({}) => {
     
     return (
         <header className="fixed w-full h-full mt-2">
-            <div className={`inner rounded-lg rounded-b-none h-fit flex flex-col items-center transition ${active ? 'active' : ''}`}>
+            <div className={`inner rounded-lg h-fit flex flex-col items-center transition ${active ? 'active' : ''}`}>
                 <div className="flex h-[54px] w-full bg-transparent items-center ps-1.5 pe-1.5 ">
                     {/* Hamburger menu */}
                     <svg width={16} viewBox="0 0 20 20" className="block xl:hidden mr-3">
