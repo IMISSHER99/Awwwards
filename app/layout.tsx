@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Cabin } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.scss";
 import Header from "./_components/header/Header";
 
-const cabin = Cabin({ subsets: ["latin"] });
+const lato = Lato({ 
+  subsets: ["latin"], 
+  style: ['normal'],
+  weight: ['100', '300', '400', '700', '900'] 
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cabin.className}>
+      <body className={lato.className}>
         <Header />
         {children}
       </body>
