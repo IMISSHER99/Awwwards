@@ -1,6 +1,6 @@
 'use client'
 import { getNavigationData } from "@/app/_actions/navigation"
-import iconMap, { BlogIcon, CollectionsIcon, TechnologiesIcon, TrendingIcon, UIElementsIcon, WebsitesIcon } from "@/app/_common/icons/Icons"
+import iconMap from "@/app/_common/icons/Icons"
 import { NavigationData } from "@/app/_types/navigation.types"
 import Link from "next/link"
 import { useEffect, useState } from "react"
