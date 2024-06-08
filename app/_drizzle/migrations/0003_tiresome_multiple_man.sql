@@ -1,0 +1,1 @@
+ALTER TABLE "awwwards_dev"."sublinks" DROP CONSTRAINT "sublinks_name_unique";
