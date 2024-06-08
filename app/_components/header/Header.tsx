@@ -21,7 +21,7 @@ const Header:React.FC<HeaderProps> = ({}) => {
     }
     
     return (
-        <header className="fixed w-full h-full mt-2">
+        <header className="fixed w-full h-full md:mt-2">
             <div className={`inner rounded-lg h-fit flex flex-col items-center transition ${active ? 'active' : ''}`}>
                 <div className="flex h-[54px] w-full bg-transparent items-center ps-1.5 pe-1.5 ">
                     {/* Hamburger menu */}
