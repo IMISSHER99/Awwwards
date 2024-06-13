@@ -1,3 +1,5 @@
+import Filter from "../_components/filters/Filters"
+
 export type WebsiteProps = {}
 
 const Website:React.FC<WebsiteProps> = ({}) => {
