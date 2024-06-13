@@ -11,6 +11,10 @@
     --background: 226, 231, 211;
     --black: 34,34,34;
     --black-v1: 56, 56, 56;
+    --black-v3: 62, 62, 62;
+    --border: 78, 78, 78;
+    --grey: 222, 222, 222;
+    --grey-v1: 167, 167, 167;
 }
 
 *, *::before, *::after {
@@ -50,8 +54,15 @@ body {
 
 .bg-black {
     background-color: rgb(var(--black));
+
+    &--opacity-8 {
+        background-color: rgba(var(--black), .8);
+    }
     &--v1 {
         background-color: rgb(var(--black-v1));
+    }
+    &--v3 {
+        background-color: rgb(var(--black-v3));
     }
 }
 
@@ -59,6 +70,18 @@ body {
     background-color: rgb(var(--header-active));
 }
 
+.color-grey {
+    color: rgb(var(--grey));
+}
+
+/*********************************** BORDER **********************************/
+
+.border {
+    border: 1px solid rgb(var(--border));
+    &:hover {
+        border-color: rgb(var(--grey-v1));
+    }
+}
 
 /*********************************** TRANISTION ******************************/
 
