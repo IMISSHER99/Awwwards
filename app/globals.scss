@@ -40,6 +40,13 @@ body {
     }
 }
 
+/********************************** BOX SHADOW ********************************/
+
+.box-shadow {
+    box-shadow: 0 0 6px 0px rgba(0,0,0,0.2);
+}
+
+
 /*********************************** HEIGHT **********************************/
 .h-fill {
     height: -webkit-fill-available;
@@ -72,6 +79,42 @@ body {
 
 .color-grey {
     color: rgb(var(--grey));
+}
+
+/********************************** RADIO ************************************/
+
+.radio {
+    &::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        width: 12px;
+        height: 12px;
+        border: 1px solid #a7a7a7;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 14px;
+        width: 8px;
+        height: 8px;
+        background: currentColor;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all .3s;
+    }
+
+    &:hover {
+        background-color: rgb(var(--header-active));
+        
+        &:after {
+            opacity: 1;
+        }
+    }
 }
 
 /*********************************** BORDER **********************************/
