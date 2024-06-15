@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --primary-background: 248, 248, 248;
+    --header-active: 237, 237, 237;
+    --pad-inner: 52px;
+    --inline-width: 1816px;
+    --background: 226, 231, 211;
+    --black: 34,34,34;
+    --black-v1: 56, 56, 56;
+    --black-v3: 62, 62, 62;
+    --border: 78, 78, 78;
+    --grey: 222, 222, 222;
+    --grey-v1: 167, 167, 167;
+}
+
+*, *::before, *::after {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(var(--primary-background));
+}
+
+.inner {
+    inline-size: min((100% - var(--pad-inner) * 2), var(--inline-width));
+    margin-inline: auto;
+
+    @media only screen and (max-width: 786px) {
+        margin-inline: 0;
+        inline-size: auto;
+        padding: 0 10px;
+    }
+}
+
+/********************************** BOX SHADOW ********************************/
+
+.box-shadow {
+    box-shadow: 0 0 6px 0px rgba(0,0,0,0.2);
+}
+
+
+/*********************************** HEIGHT **********************************/
+.h-fill {
+    height: -webkit-fill-available;
+}
+
+/************************************ COLOR **********************************/
+
+
+.bg-color {
+    background-color: rgb(var(--background));
+}
+
+.bg-black {
+    background-color: rgb(var(--black));
+
+    &--opacity-8 {
+        background-color: rgba(var(--black), .8);
+    }
+    &--v1 {
+        background-color: rgb(var(--black-v1));
+    }
+    &--v3 {
+        background-color: rgb(var(--black-v3));
+    }
+}
+
+.bg-grey {
+    background-color: rgb(var(--header-active));
+}
+
+.color-grey {
+    color: rgb(var(--grey));
+}
+
+/********************************** RADIO ************************************/
+
+.radio {
+    &::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        width: 12px;
+        height: 12px;
+        border: 1px solid #a7a7a7;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 14px;
+        width: 8px;
+        height: 8px;
+        background: currentColor;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all .3s;
+    }
+
+    &:hover {
+        background-color: rgb(var(--header-active));
+        
+        &:after {
+            opacity: 1;
+        }
+    }
+}
+
+/*********************************** BORDER **********************************/
+
+.border {
+    border: 1px solid rgb(var(--border));
+    &:hover {
+        border-color: rgb(var(--grey-v1));
+    }
+}
+
+/*********************************** TRANISTION ******************************/
+
+.transition {
+    transition: all .3s ease-in;
+}
+
+/************************************ HEADER ********************************/
+
+header {
+    & .active {
+        background-color: rgb(var(--header-active));
+    }
+}
+
+/******************************** SEARCH BAR *********************************/
+
+.searchbar {
+    font-size: 15px;
+    color: rgb(var(--black));
+    &::placeholder {
+        color: black;
+        font-weight: 100 !important;
+        font-size: 15px !important;
+        color: rgb(var(--black));
+    }
+}
+
+/********************************** BUTTON *************************************/
+
+.button {
+    transition: all .3s ease-in;
+
+    &:hover {
+        background-color: rgb(var(--black-v1));
+    }
+
+    &__outline {
+        color: rgb(var(--black));
+        background: transparent;
+        border: .5px solid rgb(var(--black));
+
+        &:hover {
+            background-color: rgb(var(--black-v1));
+            color: white;
+        }
+    }
+}
