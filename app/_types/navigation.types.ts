@@ -1,3 +1,4 @@
+
 export type NavigationData = {
     name: string,
     svgIconName: string,
