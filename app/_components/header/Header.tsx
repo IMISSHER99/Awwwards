@@ -3,14 +3,19 @@ import Link from "next/link"
 import Navigation from "../navigation/Navigation"
 import SearchBar from "../searchbar/SearchBar"
 import Button, { ButtonType } from "@/app/_common/button/Button"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import NavigationDropdown from "../navigationDropdown/NavigationDropdown"
+import useClickOutside from "@/app/_hooks/ClickOutsideHook"
 
 export type HeaderProps = {
 
 }
 
 const Header:React.FC<HeaderProps> = ({}) => {
+
+
+    // Search Ref to set the reference
+    const searchRef = useRef<HTMLElement>(null);
 
     // Use state to save the state of the toggle
     const [active, toggleActive] = useState<boolean>(false);
@@ -19,10 +24,16 @@ const Header:React.FC<HeaderProps> = ({}) => {
     const handleToggle = () => {
         toggleActive(!active);
     }
+
+    // Custom hook to handle click outside
+    useClickOutside(searchRef, () => {
+        toggleActive(false)
+    })
+
     
     return (
-        <header className="fixed w-full h-full md:mt-2">
-            <div className={`inner rounded-lg h-fit flex flex-col items-center transition ${active ? 'active' : ''}`}>
+        <header className="fixed w-full h-[54px] top-0 md:mt-2" ref={searchRef}>
+            <div className={`inner rounded-lg flex flex-col items-center transition ${active ? 'active' : ''}`}>
                 <div className="flex h-[54px] w-full bg-transparent items-center ps-1.5 pe-1.5 ">
                     {/* Hamburger menu */}
                     <svg width={16} viewBox="0 0 20 20" className="block xl:hidden mr-3">

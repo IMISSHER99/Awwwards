@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Lato } from "next/font/google";
 import "./globals.scss";
 import Header from "./_components/header/Header";
+import Menu from "./_components/menu/Menu";
 
 const lato = Lato({ 
   subsets: ["latin"], 
@@ -22,9 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lato.className}>
+      <body className={`${lato.className} relative`}>
         <Header />
         {children}
+        <Menu />
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ on:
     branches: [main, golden, develop]
   pull_request:
     types: [opened]
+  workflow_dispatch:
 
 jobs:
   deploy:

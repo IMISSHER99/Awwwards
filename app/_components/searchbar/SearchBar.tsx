@@ -1,9 +1,13 @@
+import useClickOutside from "@/app/_hooks/ClickOutsideHook";
+import { useRef, useState } from "react"
+
 export type SearchProps = {
     handleToggle: () => void,
     state: boolean
 }
 
 const SearchBar:React.FC<SearchProps> = ({ handleToggle, state }) => {
+
     return (
         <form action="#" className={`flex flex-1 items-center h-[42px] ml-5 brightness-95 bg-color rounded-lg pl-4 transition ${state ? '!bg-white !brightness-100': ''}`}>
             <button type="submit">
