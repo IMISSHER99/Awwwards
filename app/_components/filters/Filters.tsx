@@ -1,6 +1,5 @@
 'use client'
 import Dropdown from "@/app/_common/dropdown/Dropdown"
-import WithContainer from "../WithContainer"
 import { useEffect, useState } from "react"
 import { getAwardsFilterData } from "@/app/_actions/filters"
 import { Filters } from "@/app/_types/filter.types"
@@ -17,7 +16,12 @@ const Filter:React.FC<FilterProps> = ({}) => {
 
     const [filters, setFilters] = useState<Filters>({
         "awards": [],
-        "category": []
+        "category": [],
+        "tag": [],
+        "technology": [],
+        "font": [],
+        "color": [],
+        "country": []
     });
 
     // Use effect which runs as soon as the component is mounted 
@@ -34,11 +38,16 @@ const Filter:React.FC<FilterProps> = ({}) => {
 
 
     return (
-        <div className="w-full mt-[86px] h-[54px]">
+        <div className="w-full mt-[76px] h-[54px]">
             <div className="flex items-center justify-between bg-grey min-h-[54px] rounded-lg p-1.5">
                 <div className="flex items-center gap-1.5">
-                    <Dropdown filterData={filters.awards} name="Awards" isOpen={openDropdown === 'Awards'} onToggle={() => toggleDropdown('Awards')}/>
-                    <Dropdown filterData={filters.category} name="Category" isOpen={openDropdown === 'Category'}  onToggle={() => toggleDropdown('Category')} />
+                    <Dropdown filterData={filters.awards} filterName="Awards" isOpen={openDropdown === 'Awards'} onToggle={() => toggleDropdown('Awards')}/>
+                    <Dropdown filterData={filters.category} filterName="Category" isOpen={openDropdown === 'Category'}  onToggle={() => toggleDropdown('Category')} />
+                    <Dropdown filterData={filters.tag} filterName="Tag" isOpen={openDropdown === 'Tag'}  onToggle={() => toggleDropdown('Tag')} />
+                    <Dropdown filterData={filters.technology} filterName="Technology" isOpen={openDropdown === 'Technology'}  onToggle={() => toggleDropdown('Technology')} />
+                    <Dropdown filterData={filters.country} filterName="Country" isOpen={openDropdown === 'Country'}  onToggle={() => toggleDropdown('Country')} />
+                    <Dropdown filterData={filters.font} filterName="Font" isOpen={openDropdown === 'Font'}  onToggle={() => toggleDropdown('Font')} />
+                    <Dropdown filterData={filters.color} filterName="Color" isOpen={openDropdown === 'Color'}  onToggle={() => toggleDropdown('Color')} />
                 </div>
                 <div className="flex items-center gap-3">
                 </div>

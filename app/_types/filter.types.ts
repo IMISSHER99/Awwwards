@@ -1,6 +1,11 @@
 export type Filters = {
     "awards": FilterData[],
-    "category": FilterData[]
+    "category": FilterData[],
+    "tag": FilterData[],
+    "technology": FilterData[],
+    "country": FilterData[],
+    "font": FilterData[],
+    "color": FilterData[]
 }
 
 export type FilterData = {
