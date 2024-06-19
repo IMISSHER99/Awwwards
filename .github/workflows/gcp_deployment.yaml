@@ -37,6 +37,20 @@ jobs:
           
             - name: 'Use gcloud CLI'
               run: 'gcloud info'
+
+
+            # Authentication with docker
+            - name: Docker Auth
+              run: |-
+                gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
+            
+            - name: Build image
+              run: docker build . --tag ${{ env.REPOSITORY }}
+              working-directory: WORKING_DIRECTORY
+        
+            - name: Push image
+              run: docker push ${{ env.REPOSITORY }}
+
           
 
 
