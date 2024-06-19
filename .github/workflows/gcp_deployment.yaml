@@ -1,0 +1,34 @@
+name: GCP-CD/CD
+on:
+    push:
+        branches: ["main", "golden", "develop"]
+    pull_request:
+        types: [opened]
+    workflow_dispatch:
+
+env:
+    PROJECT_ID: awwwards-clone-project
+    REGION: asia-south1
+    REPOSITORY: asia-south1/docker.pkg.dev/awwwards-clone-project/awwwards-clone-repo/awwwards-clone
+
+jobs:
+    deploy_to_artifact_registry:
+        runs-on: ubuntu-latest
+        steps:
+            # Github Code Checkout Action
+            - name: Git Checkout
+              uses: actions/checkout@v4
+        
+            # Install Dependencies for the application
+            - name: Install Dependencies
+              run: npm install
+            
+            # Authenticate with GCP
+            - name: Authenticate with GCP
+              uses: google-github-actions/auth@v2
+              with:
+                credentials_json: "${{ secrets.GCP_SERVICE_ACCOUNT_TOKEN }}"
+                
+
+
+            
