@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+<<<<<<< HEAD
 import { Lato } from "next/font/google";
+=======
+import { Cabin } from "next/font/google";
+>>>>>>> 3a6a062 (Added Header and Navigation)
 import "./globals.scss";
 import Header from "./_components/header/Header";
 import Menu from "./_components/menu/Menu";
 
+<<<<<<< HEAD
 const lato = Lato({ 
   subsets: ["latin"], 
   style: ['normal'],
   weight: ['100', '300', '400', '700', '900'] 
 });
+=======
+const cabin = Cabin({ subsets: ["latin"] });
+>>>>>>> 3a6a062 (Added Header and Navigation)
 
 export const metadata: Metadata = {
   title: "Create Next App",
