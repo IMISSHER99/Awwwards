@@ -2,7 +2,7 @@
 import { FilterData } from "@/app/_types/filter.types"
 import Link from "next/link"
 import { usePathname, useSearchParams, useRouter } from "next/navigation"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { Suspense, useCallback, useEffect, useRef, useState } from "react"
 
 export type DropdownProps = {
     filterData: FilterData[],
@@ -44,7 +44,7 @@ const Dropdown: React.FC<DropdownProps> = ({ filterData, filterName, isOpen, onT
     )
 
     return (
-        <>
+        <Suspense>
             <button className="relative flex items-center justify-between min-w-[48px] max-w-[220px] ps-6 pe-6 gap-1.5 bg-white rounded-lg" onClick={onToggle}>
                 <span className="flex items-center justify-between whitespace-nowrap font-normal text-sm">{filterName}</span>
                 <svg viewBox="0 0 20 20" width={8} className={`transition ${isOpen ? 'rotate-180' : ''}`}>
@@ -68,7 +68,7 @@ const Dropdown: React.FC<DropdownProps> = ({ filterData, filterName, isOpen, onT
                     </ul>
                 </div>
             </button>
-        </>
+        </Suspense>
     )
 }
 
