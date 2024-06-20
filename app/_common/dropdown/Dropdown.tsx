@@ -1,3 +1,4 @@
+'use client'
 import { FilterData } from "@/app/_types/filter.types"
 import Link from "next/link"
 import { usePathname, useSearchParams, useRouter } from "next/navigation"
