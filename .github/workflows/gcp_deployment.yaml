@@ -46,8 +46,8 @@ jobs:
             
             - name: Build image
               run: docker build . --file Dockerfile --tag ${{ env.REPOSITORY }}
+              working-directory: Awwwards
 
-              working-directory: WORKING_DIRECTORY
         
             - name: Push image
               run: docker push ${{ env.REPOSITORY }}
