@@ -44,7 +44,6 @@ jobs:
             - name: 'Use gcloud CLI'
               run: 'gcloud info'
 
-
             # Authentication with docker
             - name: Docker Auth
               run: |-

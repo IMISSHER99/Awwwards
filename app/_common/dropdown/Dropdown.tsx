@@ -67,7 +67,6 @@ const Dropdown: React.FC<DropdownProps> = ({ filterData, filterName, isOpen, onT
                     </ul>
                 </div>
             </button>
-            
         </>
     )
 }
