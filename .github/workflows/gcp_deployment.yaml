@@ -22,6 +22,12 @@ jobs:
             # Install Dependencies for the application
             - name: Install Dependencies
               run: npm install
+              working-directory: ./Awwwards/Awwwards
+            
+             # Building the application
+            - name: Build Application
+              run: npm run build
+              working-directory: ./Awwwards/Awwwards
             
             # Authenticate with GCP
             - name: Authenticate with GCP
@@ -46,6 +52,7 @@ jobs:
             
             - name: Build image
               run: docker build . --file Dockerfile --tag ${{ env.REPOSITORY }}
+              working-directory: ./Awwwards/Awwwards
 
         
             - name: Push image
