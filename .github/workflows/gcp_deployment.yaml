@@ -46,7 +46,6 @@ jobs:
             
             - name: Build image
               run: docker build . --file Dockerfile --tag ${{ env.REPOSITORY }}
-
               working-directory: WORKING_DIRECTORY
         
             - name: Push image
