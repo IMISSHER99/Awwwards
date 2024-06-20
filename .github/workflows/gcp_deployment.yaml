@@ -56,7 +56,7 @@ jobs:
 
         
             - name: Push image
-              run: docker push ${{ env.REPOSITORY }}
+              run: docker push docker.io/${{ env.REPOSITORY }}
 
           
 
