@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
-    "drizzle-orm": "^0.31.2",
+    "drizzle-orm": "^0.31.4",
     "fs": "^0.0.2",
     "net": "^1.0.2",
     "next": "14.2.3",
